@@ -17,23 +17,24 @@
 ---
 
 ## 🏗️ 2. 시스템 아키텍처 (Architecture)
-[사용자 자연어 질의]
-│
-▼
-[Gemini 2.5 Flash] ──(Schema Injection & Few-Shot)──> [SQL 쿼리 생성]
-│
-▼
-[Read-Only 보안 가드레일] ──(DROP, DELETE, UPDATE 사전 정규식 차단)
-│
-├── [안전 검증 통과] ──> [DuckDB 엔진 실행] (세션 격리)
-│                               │
-│                        (에러 발생 시 Self-Correction 루프)
-▼                               ▼
-[Plotly 막대 차트 자동 렌더링] & [AI 감사 리포트 브리핑]
-│
-▼
-[Gradio 대시보드 출력]
 
+```text
+[사용자 자연어 질의]
+        │
+        ▼
+[Gemini 2.5 Flash] ──(Schema Injection & Few-Shot)──> [SQL 쿼리 생성]
+        │
+        ▼
+[Read-Only 보안 가드레일] ──(DROP, DELETE, UPDATE 사전 정규식 차단)
+        │
+        ├── [안전 검증 통과] ──> [DuckDB 엔진 실행] (세션 격리)
+        │                               │
+        │                        (에러 발생 시 Self-Correction 루프)
+        ▼                               ▼
+[Plotly 막대 차트 자동 렌더링] & [AI 감사 리포트 브리핑]
+        │
+        ▼
+[Gradio 대시보드 출력]
 ---
 
 ## 🛡️ 3. 핵심 엔지니어링 포인트 (Key Engineering Features)
