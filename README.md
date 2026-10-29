@@ -35,6 +35,8 @@
         │
         ▼
 [Gradio 대시보드 출력]
+```
+
 ---
 
 ## 🛡️ 3. 핵심 엔지니어링 포인트 (Key Engineering Features)
